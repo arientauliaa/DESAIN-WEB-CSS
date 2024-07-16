@@ -1,0 +1,98 @@
+// Variables
+$primary-color: #000000;
+$secondary-color: #767676;
+$font-stack: 'Arial, sans-serif';
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Extend/Inheritance
+%card-style {
+  padding: 20px;
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+// Nesting
+body {
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  .navbar {
+    background-color: $primary-color;
+    padding: 10px;
+
+    .navbar-brand {
+      color: white;
+      text-decoration: none;
+      img{
+        width: 50px;
+      }
+    }
+
+    .navbar-nav {
+      list-style: none;
+      padding: 0;
+
+      .nav-item {
+        display: inline;
+        margin-right: 10px;
+
+        a {
+          color: white;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .header {
+    background-color: $secondary-color;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+
+    h1 {
+      margin: 0 0 20px;
+    }
+
+    .btn-primary {
+      @include flex-center;
+      background-color: $primary-color;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .container {
+    padding: 20px;
+
+    .card {
+      @extend %card-style;
+    }
+  }
+
+  .footer {
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
