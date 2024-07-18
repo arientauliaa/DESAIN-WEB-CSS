@@ -1,0 +1,4 @@
+<doctype html>
+<html>
+<head>
+	<h3 style-"text-align: center;">FORMULIR PENDAFTARAN
